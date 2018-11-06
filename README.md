@@ -1,13 +1,16 @@
 # TCP Echo Server
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/venilnoronha/tcp-echo-server.svg?logo=docker)](https://hub.docker.com/r/venilnoronha/tcp-echo-server/)
+[![License](https://img.shields.io/github/license/venilnoronha/tcp-echo-server.svg)](LICENSE)
+
 TCP Echo Server is a simple echo server written in Golang that works plainly
 over the TCP protocol. The server listens to connection requests, prepends a
 preconfigured prefix to the data it receives from a client and writes it back
 on the connection.
 
-## Deployment
+## Deploy Locally
 
-To start the TCP Echo Server, simply run the following command.
+To start the TCP Echo Server locally, simply run the following command.
 
 ```console
 $ go run -v main.go 9000 hello
@@ -15,15 +18,25 @@ command-line-arguments
 listening on [::]:9000, prefix: hello
 ```
 
-## Test
+## Deploy Over Docker
 
-To manually test the TCP Echo Server, start the server and run the following
-command.
+To run the TCP Echo Server container, simply execute the following command.
 
 ```console
-$ echo world |nc localhost 9000
+$ docker run -p 9000:9000 venilnoronha/tcp-echo-server:latest
+listening on [::]:9000, prefix: hello
+```
+
+## Manual Test
+
+To test the TCP Echo Server, run the following command.
+
+```console
+$ echo world | nc localhost 9000
 hello world
 ```
+
+## Unit Test
 
 To run the unit test, execute the following command.
 

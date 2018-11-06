@@ -50,3 +50,8 @@ response: hello world
 PASS
 ok  	github.com/venilnoronha/tcp-echo-server	2.015s
 ```
+
+## License
+
+The TCP Echo Server project is distributed under the BSD-style license found in
+the [LICENSE](LICENSE) file.
